@@ -1,0 +1,55 @@
+services:
+  app:
+    build: ./docker/php
+    container_name: kintai-app
+    working_dir: /var/www
+    command: sh -c "chmod -R 777 /var/www/storage /var/www/bootstrap/cache && php-fpm"
+    volumes:
+      - ./src:/var/www
+    environment:
+      TZ: Asia/Tokyo
+    depends_on:
+      - db
+
+  web:
+    build: ./docker/nginx
+    container_name: kintai-nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src:/var/www
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: kintai-db
+    environment:
+      MYSQL_DATABASE: kintai
+      MYSQL_USER: kintai
+      MYSQL_PASSWORD: kintai
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Tokyo
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: kintai-mailhog
+    ports:
+      - "8025:8025"
+
+  node:
+    image: node:22-alpine
+    container_name: kintai-node
+    working_dir: /var/www
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "5173:5173"
+    tty: true
+
+volumes:
+  db-data:
