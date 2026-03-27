@@ -192,7 +192,7 @@ Time: 2.34s
 | created_at   | timestamp |    |    |    |          |
 | updated_at   | timestamp |    |    |    |          |
 
-- 制約
+#### 制約
 - UNIQUE(user_id, work_date)
 
 ### break_timesテーブル
