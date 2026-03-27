@@ -14,7 +14,6 @@ class AttendanceRequest extends Model
 
     protected $fillable = [
         'attendance_id',
-        'user_id',
         'requested_clock_in_at',
         'requested_clock_out_at',
         'requested_break_times',
@@ -37,11 +36,6 @@ class AttendanceRequest extends Model
     public function attendance(): BelongsTo
     {
         return $this->belongsTo(Attendance::class);
-    }
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 
     public function isPending(): bool

@@ -26,7 +26,7 @@
   <text x="100" y="320" class="table-text">email_verified_at</text>
   <text x="100" y="350" class="table-text">password</text>
 
-  <rect x="470" y="120" width="340" height="300" rx="4" fill="#fff7ed" stroke="#9a3412" stroke-width="3" />
+  <rect x="470" y="120" width="340" height="270" rx="4" fill="#fff7ed" stroke="#9a3412" stroke-width="3" />
   <line x1="470" y1="165" x2="810" y2="165" stroke="#9a3412" stroke-width="2" />
   <text x="490" y="150" class="table-title">attendances</text>
   <text x="490" y="200" class="table-text">PK id</text>
@@ -34,8 +34,7 @@
   <text x="490" y="260" class="table-text">work_date</text>
   <text x="490" y="290" class="table-text">clock_in_at</text>
   <text x="490" y="320" class="table-text">clock_out_at</text>
-  <text x="490" y="350" class="table-text">note</text>
-  <text x="490" y="380" class="table-text">UNIQUE(user_id, work_date)</text>
+  <text x="490" y="350" class="table-text">UNIQUE(user_id, work_date)</text>
 
   <rect x="920" y="120" width="280" height="220" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="3" />
   <line x1="920" y1="165" x2="1200" y2="165" stroke="#1d4ed8" stroke-width="2" />
@@ -51,11 +50,11 @@
   <text x="490" y="550" class="table-title">attendance_requests</text>
   <text x="490" y="600" class="table-text">PK id</text>
   <text x="490" y="630" class="table-text">FK attendance_id</text>
-  <text x="490" y="660" class="table-text">FK user_id</text>
-  <text x="490" y="690" class="table-text">requested_clock_in_at</text>
-  <text x="490" y="720" class="table-text">requested_clock_out_at</text>
-  <text x="490" y="750" class="table-text">requested_break_times</text>
-  <text x="490" y="780" class="table-text">note / status</text>
+  <text x="490" y="660" class="table-text">requested_clock_in_at</text>
+  <text x="490" y="690" class="table-text">requested_clock_out_at</text>
+  <text x="490" y="720" class="table-text">requested_break_times</text>
+  <text x="490" y="750" class="table-text">note</text>
+  <text x="490" y="780" class="table-text">status</text>
 
   <path d="M360 245 L470 245" class="line" marker-end="url(#arrow)" />
   <text x="390" y="230" class="label">1 : N</text>
@@ -63,11 +62,8 @@
   <path d="M810 230 L920 230" class="line" marker-end="url(#arrow)" />
   <text x="845" y="215" class="label">1 : N</text>
 
-  <path d="M250 370 L250 660 L470 660" class="line" marker-end="url(#arrow)" />
-  <text x="270" y="640" class="label">1 : N</text>
-
   <path d="M640 420 L640 520" class="line" marker-end="url(#arrow)" />
   <text x="660" y="485" class="label">1 : N</text>
 
-  <text x="80" y="850" class="table-text">relations: users 1:N attendances, attendances 1:N break_times, users 1:N attendance_requests, attendances 1:N attendance_requests</text>
+  <text x="80" y="850" class="table-text">relations: users 1:N attendances, attendances 1:N break_times, attendances 1:N attendance_requests</text>
 </svg>

@@ -27,7 +27,6 @@ class AdminAttendanceRequestApprovalTest extends TestCase
 
         AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'requested_clock_in_at' => Carbon::create(2026, 3, 12, 9, 15, 0, 'Asia/Tokyo'),
             'requested_clock_out_at' => Carbon::create(2026, 3, 12, 18, 15, 0, 'Asia/Tokyo'),
             'requested_break_times' => [],
@@ -65,7 +64,6 @@ class AdminAttendanceRequestApprovalTest extends TestCase
 
         AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'requested_clock_in_at' => Carbon::create(2026, 3, 12, 9, 15, 0, 'Asia/Tokyo'),
             'requested_clock_out_at' => Carbon::create(2026, 3, 12, 18, 15, 0, 'Asia/Tokyo'),
             'requested_break_times' => [],
@@ -98,7 +96,6 @@ class AdminAttendanceRequestApprovalTest extends TestCase
 
         $attendanceRequest = AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'requested_clock_in_at' => Carbon::create(2026, 3, 12, 9, 15, 0, 'Asia/Tokyo'),
             'requested_clock_out_at' => Carbon::create(2026, 3, 12, 18, 15, 0, 'Asia/Tokyo'),
             'requested_break_times' => [
@@ -157,7 +154,6 @@ class AdminAttendanceRequestApprovalTest extends TestCase
 
         $attendanceRequest = AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'requested_clock_in_at' => Carbon::create(2026, 3, 12, 9, 15, 0, 'Asia/Tokyo'),
             'requested_clock_out_at' => Carbon::create(2026, 3, 12, 18, 15, 0, 'Asia/Tokyo'),
             'requested_break_times' => [],

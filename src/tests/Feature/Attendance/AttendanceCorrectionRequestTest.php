@@ -161,7 +161,6 @@ class AttendanceCorrectionRequestTest extends TestCase
         $response->assertRedirect(route('attendance.show', $attendance));
         $this->assertDatabaseHas('attendance_requests', [
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'status' => AttendanceRequest::STATUS_PENDING,
             'note' => '打刻漏れのため修正',
         ]);
@@ -207,7 +206,6 @@ class AttendanceCorrectionRequestTest extends TestCase
 
         AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $user->id,
             'requested_clock_in_at' => Carbon::create(2026, 3, 12, 9, 15, 0, 'Asia/Tokyo'),
             'requested_clock_out_at' => Carbon::create(2026, 3, 12, 18, 15, 0, 'Asia/Tokyo'),
             'requested_break_times' => [['start' => '12:00', 'end' => '13:00']],

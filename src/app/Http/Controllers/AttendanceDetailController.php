@@ -46,7 +46,6 @@ class AttendanceDetailController extends Controller
 
         AttendanceRequest::create([
             'attendance_id' => $attendance->id,
-            'user_id' => $request->user()->id,
             'requested_clock_in_at' => CarbonImmutable::createFromFormat('Y-m-d H:i', $workDate.' '.$request->string('clock_in'), 'Asia/Tokyo'),
             'requested_clock_out_at' => CarbonImmutable::createFromFormat('Y-m-d H:i', $workDate.' '.$request->string('clock_out'), 'Asia/Tokyo'),
             'requested_break_times' => $request->normalizedBreakTimes(),
